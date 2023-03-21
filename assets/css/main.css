@@ -142,8 +142,8 @@ input, select, textarea {
 		font-size: 1.5em;
 	}
 	h3.portf{
-		color: #2FDEDB; 
-		font-weight: 500; 
+		color: #2FDEDB;
+		font-weight: 500;
 		line-height: 1.2;
 	}
 
@@ -2253,7 +2253,7 @@ input, select, textarea {
 
 			#main > section.one {
 				background-color: #81918E;
-				background-image: url("../../images/banner.jpg");
+				background-image: url("../../images/data_uriel-sc-11KDtiUWRq4-unsplash.jpg");
 			}
 
 			#main > section.two {
@@ -2634,6 +2634,6 @@ input, select, textarea {
 				#footer .copyright li:first-child {
 					margin-top: 0;
 				}
-			
+
 
 	}
