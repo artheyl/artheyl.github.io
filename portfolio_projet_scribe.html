@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html class="no-js">
+    <head>
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" href="favicon.ico">
+        <title>Timer Agency Template</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <!-- Template CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" href="plugins/ionicons/ionicons.min.css">
+        <!-- animate css -->
+        <link rel="stylesheet" href="plugins/animate-css/animate.css">
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" href="plugins/slider/slider.css">
+        <!-- slick slider -->
+        <link rel="stylesheet" href="plugins/slick/slick.css">
+        <!-- Fancybox -->
+        <link rel="stylesheet" href="plugins/facncybox/jquery.fancybox.css">
+        <!-- hover -->
+        <link rel="stylesheet" href="plugins/hover/hover-min.css">
+        <!-- template main css file -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body> <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+<section class="top-bar animated-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="../images/logo.png" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="index.html#about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#feature">Service</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="index.html#works">Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#call-to-action">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!--
+==================================================
+Global Page Section Start
+================================================== -->
+<section class="global-page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h2>Scribe: Building an Audio Transcription Tool with Google Cloud Speech API</h2>
+          <div class="portfolio-meta">
+            <span>Dec 11, 2020</span>|
+            <span> Category: typography</span>|
+            <span> website:
+              <a href="http://www.themefisher.com">Themefisher</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/#Page header-->
+
+<!-- work details part start -->
+<section class="work-single">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="work-single-image">
+          <!-- Work Single Image -->
+          <img class="img-fluid w-100" src="images/portfolio/scribe.png" alt="work-single-image">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <!-- work single Content -->
+        <div class="work-single-content">
+          <p>During one of my recent projects, I had the opportunity to develop Scribe, an audio transcription tool
+            that allows users to upload audio files and receive transcriptions in an editable format. The project
+            combined both backend and frontend development, as well as the integration of cloud services, creating a
+            seamless experience for converting audio into text.<br>
+            Here's a breakdown of my experience, the steps involved, and the lessons I learned along the way.</p>
+
+          <h3>High-Level Planning</h3>
+          <p>Before diving into coding, I took time to map out the core workflow. The goal of Scribe was simple: users
+            upload audio files, get transcriptions via the Google Cloud Speech API, and then download the results in
+            formats like PDF or Word. However, making the process smooth required thoughtful planning.</p>
+          <p>The core workflow included:
+            <ul>
+              <li><strong>Upload:</strong> Users could upload audio in various formats (MP3, WAV, etc.).</li>
+              <li><strong>Transcription Engine:</strong> Once uploaded, the audio was processed using the Google Cloud Speech API for
+              transcription.</li>
+              <li><strong>Editable Output:</strong> Users could edit their transcriptions and download them as either a PDF or Word document.</li>
+              <li><strong>User Authentication & Subscription Plans:</strong> Basic email registration and a tiered subscription model allowed
+              users to get a limited number of free transcriptions or upgrade to paid plans for unlimited access.</li><br>
+            </ul>
+            This planning stage was crucial in ensuring that each piece of functionality flowed well, from uploading
+            files to generating the final transcription output.</p>
+
+          <h3>Technical Design</h3>
+          <p>Once the features were defined, the next challenge was designing the technical architecture. This involved
+            setting up both the backend and frontend systems, as well as handling subscriptions and billing.</p>
+          <p>Backend with Django
+            The backend of Scribe was built with the Django framework, which handled all the heavy lifting:
+            User Authentication: I implemented a simple registration and login system, allowing users to create
+            accounts and manage their transcription history.
+            File Uploads: Uploaded audio files were temporarily stored on Google Cloud Storage before being processed.
+            Speech-to-Text Processing: The heart of the project was integrating the Google Cloud Speech API to perform
+            the actual transcription. This API was chosen for its robust support of various languages and dialects.
+            REST API: Using Django REST Framework (DRF), I created API endpoints for audio uploads, retrieving
+            transcriptions, and managing user accounts.</p>
+
+          <p>Frontend with Bootstrap 5
+            To create a smooth and user-friendly interface, I used Bootstrap 5 for a responsive design:
+            Home Page: Provided information about the product and a portal for logging in or registering.
+            Dashboard: Users could easily upload audio files and view past transcriptions. I designed the dashboard to
+            be as intuitive as possible, ensuring that users could manage their transcription needs efficiently.
+            Profile and Admin Pages: Users could manage their subscriptions and personal data, while the admin panel
+            helped manage the overall platform, including transcription counts and user subscriptions.</p>
+
+          <p>Subscription & Billing with Stripe
+            The final aspect of Scribe was implementing a subscription model. I integrated Stripe for handling payments
+            and subscription plans. Stripe's simplicity and clear API documentation made it the perfect choice for:
+            Tiered Plans: Offering free access with limited transcriptions, as well as paid plans for more frequent
+            users.
+            Subscription Management: Users could easily upgrade, downgrade, or cancel their plans via their profile
+            pages.</p>
+          <h3>Key takeaways</h3>
+          <p>Working on Scribe was an enriching experience that taught me a lot about both full-stack development and
+            using cloud-based APIs. Here are a few major takeaways:
+            Cloud API Integration: Integrating the Google Cloud Speech API was an exciting learning curve. I had to
+            ensure the API could handle various file formats and languages, and I learned a lot about optimizing API
+            usage to minimize costs while delivering fast results.
+            Handling File Uploads and Processing: Working with large audio files and ensuring that they were correctly
+            processed and stored (temporarily) on Google Cloud Storage was challenging. I had to balance storage
+            concerns with quick processing times, ensuring the system didn’t become overloaded.
+            Payment and Subscription Systems: Implementing a payment model with Stripe gave me invaluable experience in
+            handling subscriptions and billing. This was my first time working with a subscription-based project, and
+            integrating it smoothly with Django was both rewarding and educational.
+            UI/UX Design: Creating a user-friendly interface with Bootstrap 5 taught me a lot about responsive web
+            design. I learned to keep things simple for users, especially on the dashboard where they upload audio and
+            manage their transcription history.</p>
+
+          <h3>Conclusion</h3>
+          <p>Scribe was an ambitious project that combined many different elements—from backend APIs to user interfaces
+            and subscription models. It was an incredibly rewarding experience to see the project come together and
+            offer a practical, real-world solution for users needing audio-to-text transcription. Through this project,
+            I deepened my knowledge of Django, Google Cloud APIs, and Stripe, while also honing my skills in creating
+            efficient, scalable web applications.</p>
+        </div>
+      </div>
+      <!-- sidebar -->
+      <!-- <div class="col-lg-4">
+        <div class="work-single-sidebar">
+          <h5>Clients</h5>
+          <h6>Julia Robertson</h6>
+          <h5>date</h5>
+          <h6>November 20, 2017</h6>
+          <h5>category</h5>
+          <h6>Investment, Business</h6>
+          <h5>locations</h5>
+          <h6>1201 park street, Avenue, Dhaka</h6>
+        </div>
+      </div> -->
+      <!-- <div class="col-lg-12">
+        <a class="btn btn-dafault btn-work hvr-bounce-to-right" href="#">get this work</a>
+      </div> -->
+    </div>
+  </div>
+</section>
+<!-- work details part end -->
+
+<!-- <section class="works works-fit">
+  <div class="container">
+    <h2 class="subtitle">Some Of Our Features Works</h2>
+    <p class="subtitle-des">
+      Aliquam lobortis. Maecenas vestibulum mollis diam. Pellentesque auctor neque nec urna. Nulla sit amet est. Aenean
+      posuere
+      <br> tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.
+    </p>
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="300ms" data-wow-delay="0ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="images/portfolio/item-1.jpg" class="img-fluid" alt="portfolio items">
+            <div class="overlay">
+              <div class="buttons">
+                <a rel="gallery" title="Proin imperdiet augue et magna interdum hendrerit" class="fancybox"
+                  href="images/portfolio/item-1.jpg">Demo</a>
+                <a target="_blank" href="single-portfolio.html">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4>
+              <a href="#">
+                Dew Drop
+              </a>
+            </h4>
+            <p>
+              Redesigne UI Concept
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="300ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="images/portfolio/item-2.jpg" class="img-fluid" alt="portfolio items">
+            <div class="overlay">
+              <div class="buttons">
+                <a rel="gallery" title="Proin imperdiet augue et magna interdum hendrerit" class="fancybox"
+                  href="images/portfolio/item-2.jpg">Demo</a>
+                <a target="_blank" href="single-portfolio.html">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4>
+              <a href="#">
+                Bottle Mockup
+              </a>
+            </h4>
+            <p>
+              Lorem ipsum dolor sit.
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="300ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="images/portfolio/item-3.jpg" class="img-fluid" alt="">
+            <div class="overlay">
+              <div class="buttons">
+                <a rel="gallery" title="Proin imperdiet augue et magna interdum hendrerit" class="fancybox"
+                  href="images/portfolio/item-3.jpg">Demo</a>
+                <a target="_blank" href="single-portfolio.html">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4>
+              <a href="#">
+                Table Design
+              </a>
+            </h4>
+            <p>
+              Lorem ipsum dolor sit amet.
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="600ms"
+          style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 600ms; -webkit-animation-delay: 600ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+          <div class="img-wrapper">
+            <img src="images/portfolio/item-4.jpg" class="img-fluid" alt="">
+            <div class="overlay">
+              <div class="buttons">
+                <a rel="gallery" title="Proin imperdiet augue et magna interdum hendrerit" class="fancybox"
+                  href="images/portfolio/item-4.jpg">Demo</a>
+                <a target="_blank" href="single-portfolio.html">Details</a>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <h4>
+              <a href="#">
+                Make Up elements
+              </a>
+            </h4>
+            <p>
+              Lorem ipsum dolor.
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+            <!--
+            ==================================================
+            Call To Action Section Start
+            ================================================== -->
+            <section id="call-to-action">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="block">
+                                <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">SO WHAT DO YOU THINK ?</h1>
+                                <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">A comment, feedback, idea, question? Let me know by contacting me.</p>
+                                <a href="index.html#call-to-action" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Contact Me</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>;
+            <!--
+            ==================================================
+            Footer Section Start
+            ================================================== -->
+            <footer id="footer">
+              <div class="container">
+                  <div class="row content-justify-between">
+                      <div class="col-md-8 col-12 text-center text-lg-left text-md-left">
+                          <p class="copyright">Copyright: Design and Developed by <a href="" target="_blank">Arthur Eylenbosch</a>. <br>
+                          </p>
+                      </div>
+                      <div class="col-md-4 col-12">
+                          <!-- Social Media -->
+                          <ul class="social text-center text-md-right text-lg-right">
+                              <!-- <li>
+                                  <a href="http://wwww.fb.com/themefisher" class="Facebook">
+                                      <i class="ion-social-facebook"></i>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="http://wwww.twitter.com/themefisher" class="Twitter">
+                                      <i class="ion-social-twitter"></i>
+                                  </a>
+                              </li> -->
+                              <li>
+                                  <a href="https://www.linkedin.com/in/arthureylenbosch/" class="Linkedin">
+                                      <i class="ion-social-linkedin"></i>
+                                  </a>
+                              </li>
+                              <!-- <li>
+                                  <a href="http://wwww.fb.com/themefisher" class="Google Plus">
+                                      <i class="ion-social-googleplus"></i>
+                                  </a>
+                              </li> -->
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </footer> <!-- /#footer -->
+	<!-- Template Javascript Files
+	================================================== -->
+	<!-- jquery -->
+	<script src="plugins/jQurey/jquery.min.js"></script>
+	<!-- Form Validation -->
+    <script src="plugins/form-validation/jquery.form.js"></script>
+    <script src="plugins/form-validation/jquery.validate.min.js"></script>
+	<!-- slick slider -->
+	<script src="plugins/slick/slick.min.js"></script>
+	<!-- bootstrap js -->
+	<script src="plugins/bootstrap/bootstrap.min.js"></script>
+	<!-- wow js -->
+	<script src="plugins/wow-js/wow.min.js"></script>
+	<!-- slider js -->
+	<script src="plugins/slider/slider.js"></script>
+	<!-- Fancybox -->
+	<script src="plugins/facncybox/jquery.fancybox.js"></script>
+	<!-- template main js -->
+	<script src="js/main.js"></script>
+ 	</body>
+</html>
